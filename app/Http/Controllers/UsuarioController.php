@@ -87,6 +87,12 @@ class UsuarioController extends Controller
     {
         $id = intval($request->query('id') ?? 0);
         $usuario = Usuario::findOrFail($id);
+
+        // Se ainda não confirmou, mostra a tela de confirmação
+        if (!$request->query('confirm')) {
+            return view('usuarios.delete', compact('usuario'));
+        }
+
         $usuario->delete();
 
         return redirect()->to('/usuarios/read.php?status=deleted');
