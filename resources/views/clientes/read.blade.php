@@ -38,7 +38,6 @@
                             <i class="fa-solid fa-pen"></i>
                         </a>
                         <a href="{{ url('/clientes/delete.php?id=' . $agendamento->id) }}"
-                           onclick="return confirm('Tem certeza que deseja excluir este agendamento?');"
                            class="text-red-500 hover:text-red-400">
                             <i class="fa-solid fa-trash"></i>
                         </a>
