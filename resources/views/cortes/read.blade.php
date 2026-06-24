@@ -83,7 +83,7 @@ if ($status == 'created') {
                                 <a href="update.php?id={{ $corte->id }}" class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white border border-neutral-800 hover:border-neutral-700 transition-all" title="Editar">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
-                                <a href="delete.php?id={{ $corte->id }}" onclick="return confirm('Tem certeza que deseja excluir o corte \'{{ addslashes($corte->nome_corte) }}\'?')" class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/20 transition-all" title="Excluir">
+                                <a href="delete.php?id={{ $corte->id }}" class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 hover:text-rose-300 border border-rose-500/20 transition-all" title="Excluir">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </a>
                             </td>
