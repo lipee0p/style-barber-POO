@@ -73,7 +73,13 @@ class ClienteController extends Controller
     public function destroy(Request $request)
     {
         $id = intval($request->query('id') ?? 0);
-        $agendamento = Cliente::findOrFail($id);
+        $agendamento = Cliente::with('corte')->findOrFail($id);
+
+        // Se ainda não confirmou, mostra a tela de confirmação
+        if (!$request->query('confirm')) {
+            return view('clientes.delete', compact('agendamento'));
+        }
+
         $agendamento->delete();
 
         return redirect()->to('/clientes/read.php?status=deleted');
