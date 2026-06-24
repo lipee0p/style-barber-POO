@@ -75,6 +75,12 @@ class FuncionarioController extends Controller
     {
         $id = intval($request->query('id') ?? 0);
         $funcionario = Funcionario::findOrFail($id);
+
+        // Se ainda não confirmou, mostra a tela de confirmação
+        if (!$request->query('confirm')) {
+            return view('funcionarios.delete', compact('funcionario'));
+        }
+
         $funcionario->delete();
 
         return redirect()->to('/funcionarios/read.php?status=deleted');
