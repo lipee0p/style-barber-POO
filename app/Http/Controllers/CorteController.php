@@ -67,6 +67,12 @@ class CorteController extends Controller
     {
         $id = intval($request->query('id') ?? 0);
         $corte = Corte::findOrFail($id);
+
+        // Se ainda não confirmou, mostra a tela de confirmação
+        if (!$request->query('confirm')) {
+            return view('cortes.delete', compact('corte'));
+        }
+
         $corte->delete();
 
         return redirect()->to('/cortes/read.php?status=deleted');
