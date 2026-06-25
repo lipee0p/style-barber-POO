@@ -34,7 +34,6 @@
                             <i class="fa-solid fa-pen"></i>
                         </a>
                         <a href="{{ url('/usuarios/delete.php?id=' . $usuario->id) }}"
-                           onclick="return confirm('Tem certeza que deseja excluir este usuário?');"
                            class="text-red-500 hover:text-red-400">
                             <i class="fa-solid fa-trash"></i>
                         </a>
